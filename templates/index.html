@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Clipboard Transfer</title>
+    </head>
+
+    <body>
+        <h2>Enter clipboard text</h2>
+        <p>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+        </p>
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <label for="clipboard">Clipboard text: </label>
+                    <input type="text" name="clipboard" autocomplete="off" required>
+                </p>
+            </dl>
+                <p>
+                    <label for="password">Password: </label>
+                    <input type="passwird" name="password" autocomplete="off" required>
+                </p>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+    </body>
+</html>
